@@ -1,5 +1,7 @@
 package tests;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.annotations.BeforeTest;
 import pages.FindPage;
 import pages.MainPage;
@@ -14,6 +16,7 @@ public class BaseTest {
 
     @BeforeTest
     public void setup() {
+        SelenideLogger.addListener("", new AllureSelenide().screenshots(true));
         open(mainPage.URI);
     }
 }
