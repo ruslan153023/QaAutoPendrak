@@ -16,12 +16,8 @@ public class FindPage extends BasePage {
     private SelenideElement article = $x("//main/article");
 
     @Step("проверить href первой первой найденной статьи")
-    public void chekContainsOfHref(String word){
+    public String chekContainsOfHref(){
         article.shouldBe(Condition.visible, Duration.ofSeconds(10));
-        String href = articles.get(0).getAttribute("href");
-
-        if (!href.contains(word)) {
-            Assert.fail("Ссылка не содержит " + word);
-        }
+        return articles.first().getAttribute("href");
     }
 }

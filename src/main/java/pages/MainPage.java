@@ -10,7 +10,7 @@ import java.time.Duration;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class MainPage extends BasePage {
-    public final String URI = "https://appleinsider.ru/";
+
     private SelenideElement findInput = $x(" //input");
 
     @Step("вставить текст в поиск, нажать enter")
@@ -20,5 +20,15 @@ public class MainPage extends BasePage {
                 .setValue(value)
                 .shouldHave(Condition.exactValue(value))
                 .sendKeys(Keys.ENTER);
+    }
+
+    @Step("вставить текст в поиск, нажать enter")
+    public FindPage setValueAtInputAndEnterShort(String value){
+        findInput
+                .shouldBe(Condition.visible, Duration.ofSeconds(10))
+                .setValue(value)
+                .shouldHave(Condition.exactValue(value))
+                .sendKeys(Keys.ENTER);
+        return new FindPage();
     }
 }

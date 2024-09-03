@@ -11,12 +11,13 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class BaseTest {
 
+    private final String URI = "https://appleinsider.ru/";
     MainPage mainPage = new MainPage();
     FindPage findPage = new FindPage();
 
     @BeforeTest
     public void setup() {
         SelenideLogger.addListener("", new AllureSelenide().screenshots(true));
-        open(mainPage.URI);
+        open(URI);
     }
 }
