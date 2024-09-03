@@ -16,7 +16,7 @@ public class MainTest extends BaseTest {
         Assert.assertTrue(
                 mainPage.setValueAtInputAndEnterShort("Чем iPhone 13 отличается от iPhone 12")
                         .chekContainsOfHref()
-                        .contains("iphone-15"));
+                        .contains("iphone-16"));
     }
 
 
