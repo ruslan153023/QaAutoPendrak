@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.Step;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.annotations.BeforeTest;
 import pages.FindPage;
@@ -16,6 +17,7 @@ public class BaseTest {
     FindPage findPage = new FindPage();
 
     @BeforeTest
+    @Step("Открыть сайт appleinsider.ru")
     public void setup() {
         SelenideLogger.addListener("", new AllureSelenide().screenshots(true));
         open(URI);
