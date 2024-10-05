@@ -8,6 +8,14 @@
                     <include name="checkFind"/>
                 </methods>
             </class>
+            <class name="tests.CollectionTest">
+                <methods>
+                    <include name="checkIterationCollectionFirst"/>
+                    <include name="checkIterationCollectionSecond"/>
+                    <include name="checkIterationCollectionThird"/>
+                </methods>
+            </class>
+
         </classes>
     </test>
 </suite>

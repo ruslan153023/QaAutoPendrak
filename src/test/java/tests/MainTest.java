@@ -11,7 +11,7 @@ import java.time.Duration;
 public class MainTest extends BaseTest {
 
     @Test(retryAnalyzer = Retry.class)
-    @Description("Проверка ссылки")
+    @Description("Проверка href первой первой найденной статьи")
     public void checkFind() {
         Assert.assertTrue(
                 mainPage.setValueAtInputAndEnterShort("Чем iPhone 13 отличается от iPhone 12")

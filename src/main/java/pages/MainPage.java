@@ -13,7 +13,7 @@ public class MainPage extends BasePage {
 
     private SelenideElement findInput = $x(" //input");
 
-    @Step("вставить текст в поиск, нажать enter")
+    @Step("Вставить текст в поиск на главной странице, нажать enter")
     public void setValueAtInputAndEnter(String value) {
         findInput
                 .shouldBe(Condition.visible, Duration.ofSeconds(10))
@@ -22,7 +22,7 @@ public class MainPage extends BasePage {
                 .sendKeys(Keys.ENTER);
     }
 
-    @Step("вставить текст в поиск, нажать enter")
+    @Step("Вставить текст в поиск на главной странице, нажать enter")
     public FindPage setValueAtInputAndEnterShort(String value){
         findInput
                 .shouldBe(Condition.visible, Duration.ofSeconds(10))
